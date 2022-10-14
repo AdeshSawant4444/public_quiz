@@ -11,6 +11,7 @@ from braces.views import LoginRequiredMixin, SuperuserRequiredMixin
 class SignUpView(CreateView):
     form_class = SignUpForm
     template_name = "registration/sign_up.html"
+    success_url = reverse_lazy('login')
 
 
 class AddQuestionView(LoginRequiredMixin,SuperuserRequiredMixin,CreateView):
